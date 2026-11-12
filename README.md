@@ -80,3 +80,16 @@ The artwork currently has one portrait/body base with six variations per major c
 The original flat character art has been replaced with more natural face proportions, smaller almond eyes with detailed irises, softer palette-relative skin shading, shaped noses and lips, fine hair strands, dimensional clothing, and finer jewellery. Existing saved characters use the new renderer automatically and keep their choices. Preview, thumbnails, and PNG export share the same artwork and tighter framing.
 
 A separate high-detail image-generation reference and its final prompt are saved under `assets/art-direction/`. The reference is not displayed as the editable avatar: the app's layered illustration remains less textured than that raster reference. No generation service is called by the app.
+
+## Website deployment
+
+Public website: https://hiakku-kira-avatar.pages.dev/
+
+Build with Node 22.13+ and deploy the compiled website to Cloudflare Pages:
+
+```sh
+npm run build:web
+npx wrangler@4.160.1 pages deploy dist --project-name hiakku-kira-avatar --branch main
+```
+
+The post-export script moves Expo dependency assets out of `assets/node_modules/` because Cloudflare excludes directories with that name. Only compiled website assets are uploaded. This is a direct upload deployment; GitHub pushes do not automatically redeploy it.
