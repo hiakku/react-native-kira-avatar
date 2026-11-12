@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "kira-avatar",
+    "name": "Kira \u00b7 Avatar Studio",
     "slug": "kira-avatar",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,16 +10,27 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.chit20.kiraavatar",
+      "versionCode": 1,
+      "allowBackup": false,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#B09BCD"
       },
-      "predictiveBackGestureEnabled": false
+      "blockedPermissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.VIBRATE"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": ["expo-router", "expo-font", "expo-sharing"],
+    "scheme": "kira-avatar"
   }
 }
